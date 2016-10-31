@@ -10,3 +10,5 @@ How to run the model:
 main_dice.m - the main script to run the entire model. This will generate a workspace.mat in a folder under the Results subfolder, with indicators in the folder name for what type of run it was.
 
 time_paths.m - The subroutine to simulate paths conditional on the solution to the finite horizon problem. Load the workspace.mat that corresponds to the model you wish to simulate. channels_out contains the optimal carbon tax channels found in the main text.
+
+Note: the controls for the model code are effective consumption and *abatement cost*. Using abatement cost as a control instead of abatement allows for a linearly constrained maximization problem.
