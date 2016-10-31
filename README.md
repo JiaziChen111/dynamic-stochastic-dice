@@ -3,7 +3,7 @@
 
 The model is written in MATLAB and requires the COMPECON toolbox by Miranda and Fackler. It can be found at: http://www4.ncsu.edu/~pfackler/compecon/toolbox.html. As is, the model will replicate results found in the paper. However, users can change the code to explore different scenarios (e.g. different damage functions).
 
-There is a main folder and two subfolders. One subfolder, Smolyak, contains the Smolyak collocation codes. Some of these codes are adapted from ones graciously provided online by Lilia and Serguei Maliar. Others are partially adapted from Python code provided at EconForge: https://github.com/EconForge. The other subfolder, Results, contains the solutions (basis function coefficients) to the problem.
+There is a main folder and three subfolders. One subfolder, Smolyak, contains the Smolyak collocation codes. Some of these codes are adapted from ones graciously provided online by Lilia and Serguei Maliar. Others are partially adapted from Python code provided at EconForge: https://github.com/EconForge. The second subfolder, Results, contains the solutions (basis function coefficients) to the problem. The final subfolder contains the COMPECON toolbox codes.
 
 How to run the model:
 
