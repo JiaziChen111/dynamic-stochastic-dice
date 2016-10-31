@@ -9,4 +9,4 @@ How to run the model:
 
 main_dice.m - the main script to run the entire model. This will generate a workspace.mat in a folder under the Results subfolder, with indicators in the folder name for what type of run it was.
 
-sub_time_paths.m - The subroutine to simulate paths conditional on the solution to the finite horizon problem. Load the workspace.mat that corresponds to the model you wish to simulate. channels_out contains the optimal carbon tax channels found in the main text.
+time_paths.m - The subroutine to simulate paths conditional on the solution to the finite horizon problem. Load the workspace.mat that corresponds to the model you wish to simulate. channels_out contains the optimal carbon tax channels found in the main text.
