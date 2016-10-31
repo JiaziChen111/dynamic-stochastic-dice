@@ -1,4 +1,4 @@
-README for model code for: Managing Climate Change Under Uncertainty: Recursive Integrated Assessment at an Inflection Point
+#README for model code for: Managing Climate Change Under Uncertainty: Recursive Integrated Assessment at an Inflection Point
 
 The model is written in MATLAB and requires the COMPECON toolbox by Miranda and Fackler. It can be found at: http://www4.ncsu.edu/~pfackler/compecon/toolbox.html
 
