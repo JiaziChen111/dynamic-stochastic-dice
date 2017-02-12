@@ -145,17 +145,15 @@ end
 disp(['Max temp eval: ' num2str(max(maxo(:,1))) ' min temp eval: ' num2str(min(mino(:,1)))]);
 disp(['Max exp eval: ' num2str(max(maxo(:,2))) ' min exp eval: ' num2str(min(mino(:,2)))]);
 
-% Total number of quadrature nodes
-total_quad_nodes = Params.nqnodes^2*space.num_nodes;
 
 % Report how many collocation nodes had a quadrature points evaluated outside
 % the collocation domain
 disp(['TEMP: ' num2str(sum(maxo(:,1) > Params.smax(5))) ' quad nodes jumped above ' num2str(Params.smax(5)) ' '...
     num2str(sum(mino(:,1) < Params.smin(5))) ' quad nodes jumped below ' ...
-    num2str(Params.smin(5)) ' out of ' num2str(total_quad_nodes) ' total quadrature nodes.']);
+    num2str(Params.smin(5)) '.']);
 disp(['EXP: ' num2str(sum(maxo(:,2) > Params.smax(7))) ' quad nodes jumped above ' num2str(Params.smax(7)) ' '...
     num2str(sum(mino(:,2) < Params.smin(7))) ' quad nodes jumped below ' ...
-    num2str(Params.smin(7)) ' out of ' num2str(total_quad_nodes) ' total quadrature nodes.']);
+    num2str(Params.smin(7)) '.']);
 
 % Report how many collocation points actually transitioned outside the
 % collocation domain
