@@ -1,6 +1,6 @@
 #Code README for: Managing Climate Change Under Uncertainty: Recursive Integrated Assessment at an Inflection Point
 #By: Derek Lemoine and Ivan Rudik
-<a href="url"><img src="https://github.com/irudik/dynamic-stochastic-dice/blob/master/readme_figure.png" align="left" height="425" width="850" ></a>
+<a href="url"><img src="https://github.com/irudik/dynamic-stochastic-dice/blob/master/readme_figure.png" align="left" height="450" width="900" ></a>
 
 The model is written in MATLAB and requires the COMPECON toolbox by Miranda and Fackler. It can be found at: http://www4.ncsu.edu/~pfackler/compecon/toolbox.html. As is, the model will replicate results found in the paper. However, users can change the code to explore different scenarios (e.g. different damage functions).
 
