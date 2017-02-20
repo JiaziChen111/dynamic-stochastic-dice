@@ -121,6 +121,10 @@ mus = mus*100;
 % Calculate SCC and uncertainty channels
 if LogicalOpts.scc_switch
     run scc_calculation
+else
+    scc = 0;
+    channels = 0;
+    foc_error = 0;
 end
 
 

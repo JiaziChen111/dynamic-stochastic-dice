@@ -11,9 +11,6 @@ LogicalOpts.test_nordhaus = 1;
 % Calculate SCC
 LogicalOpts.scc_switch = 0;
 
-% Number of runs
-num_runs = 1;
-
 % Terminal simulation period
 T = 200;
 
@@ -26,32 +23,28 @@ Params.final_year = T;
     transitions_exogenous(Params,LogicalOpts);
 
 % Parallel simulation of the trajectories
-for runcount = 1:num_runs
-    
-    % Simulate trajectories
-    [s_out, q_out, v_out, mus_out, scc_out, ...
-        foc_error_out, mean_belief_out, var_belief_out, channels_out, fb_out]...
-        = simulate_paths(Params,VarsExog,LogicalOpts,...
-        space,space_terminal);
+% Simulate trajectories
+[s_out, q_out, v_out, mus_out, scc_out, ...
+    foc_error_out, mean_belief_out, var_belief_out, channels_out, fb_out]...
+    = simulate_paths(Params,VarsExog,LogicalOpts,...
+    space,space_terminal);
 
-    k_store(:,runcount) = s_out(:,1);
-    mlo_store(:,runcount) = s_out(:,2);
-    mup_store(:,runcount) = s_out(:,3);
-    matm_store(:,runcount) = s_out(:,4);
-    ts_store(:,runcount) = s_out(:,5);
-    to_store(:,runcount) = s_out(:,6);
-    mean_store(:,runcount) = s_out(:,7);
-    var_store(:,runcount) = s_out(:,8);
-    q_store(:,:,runcount) = q_out;
-    v_store(:,runcount) = v_out;
-    mus_store(:,runcount) = mus_out;
-    scc_store(:,runcount) = scc_out;
-    foc_store(:,:,runcount) = foc_error_out;
-    mean_belief_store(:,runcount) = mean_belief_out;
-    var_belief_store(:,runcount) = var_belief_out;
-    fb_store(1,runcount) = fb_out;
-
-end
+k_store = s_out(:,1);
+mlo_store = s_out(:,2);
+mup_store = s_out(:,3);
+matm_store = s_out(:,4);
+ts_store = s_out(:,5);
+to_store = s_out(:,6);
+mean_store = s_out(:,7);
+var_store = s_out(:,8);
+q_store = q_out;
+v_store = v_out;
+mus_store = mus_out;
+scc_store = scc_out;
+foc_store = foc_error_out;
+mean_belief_store = mean_belief_out;
+var_belief_store = var_belief_out;
+fb_store = fb_out;
 
 
 save_string = ['num_runs_' num2str(num_runs) '_nord_' num2str(LogicalOpts.test_nordhaus) '.mat'];
