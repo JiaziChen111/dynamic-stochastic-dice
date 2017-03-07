@@ -18,4 +18,6 @@ main_dice.m - the main script to run the entire model. This will generate a work
 
 time_paths.m - The subroutine to simulate paths conditional on the solution to the finite horizon problem. Load the workspace.mat from the folder that corresponds to the model you wish to simulate. channels_out contains the optimal carbon tax channels found in the main text.
 
-Note: the controls for the model code are effective consumption and *abatement cost*. Using abatement cost as a control instead of abatement allows for a linearly constrained maximization problem. Investment is the residual from the resource constraint.
+Notes:
+- The controls for the model code are effective consumption and *abatement cost*. Using abatement cost as a control instead of abatement allows for a linearly constrained maximization problem. Investment is the residual from the resource constraint.
+- The analytic components of the SCC/tax calculation in **time_paths** will not work for approximation_level = 1 due to the low order approximation to the value function.
