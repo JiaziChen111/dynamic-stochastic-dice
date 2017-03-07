@@ -28,7 +28,6 @@ cd(topdir);
 disp(['topdir: ',topdir]);
 
 % Make the directory for the results folder
-dirname_head = [' terminal year ' num2str(final_year)];
 dirname_tail = [' unc ' num2str(LogicalOpts.fb_unc) ' learn ' num2str(LogicalOpts.fb_learn) ...
      ' approx_level ' num2str(approximation_level)];
 dirname = [Params.test_prefix dirname_tail];
