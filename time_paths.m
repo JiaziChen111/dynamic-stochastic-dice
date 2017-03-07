@@ -2,11 +2,17 @@
 
 % Define user as 'ivan' or 'derek'
 user = 'ivan';
-run user_switch
+
+% Define root directory
+dir_root = fileparts(mfilename('fullpath'));
+addpath(genpath([dir_root]));
+addpath(genpath([dir_root '/smolyak']));
+addpath(genpath([dir_root '/compecon']));
+addpath(genpath([dir_root '/results']));
 topdir = [dir_root '\results'];
 
 % Test accuracy against Nordhaus paths (begin in 2015)
-LogicalOpts.test_nordhaus = 1;
+LogicalOpts.test_nordhaus = 0;
 
 % Calculate SCC
 LogicalOpts.scc_switch = 0;
@@ -47,7 +53,7 @@ var_belief_store = var_belief_out;
 fb_store = fb_out;
 
 
-save_string = ['num_runs_' num2str(num_runs) '_nord_' num2str(LogicalOpts.test_nordhaus) '.mat'];
+save_string = ['nord_' num2str(LogicalOpts.test_nordhaus) '.mat'];
 cd([topdir '\' dirname '\time_paths']);
 
 clear logical_*

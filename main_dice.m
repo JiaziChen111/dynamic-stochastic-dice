@@ -9,9 +9,12 @@ clear all;
 clear global;
 close all;
 
-% Define user name and directories
-user = 'ivan';
-run user_switch
+% Define root directory
+dir_root = fileparts(mfilename('fullpath'));
+addpath(genpath([dir_root]));
+addpath(genpath([dir_root '/smolyak']));
+addpath(genpath([dir_root '/compecon']));
+addpath(genpath([dir_root '/results']));
 
 % Leading name of directory
 Params.test_prefix = 'TESTING';
@@ -31,7 +34,7 @@ Params.cs_lower = 2;
 %%% Approximation options %%%
 
 % Smolyak approximation level
-approximation_level = 3*ones(1,8);
+approximation_level = 2*ones(1,8);
 
 % Number of Gauss-Hermite quadrature nodes (total number is Params.nqnodes^2)
 Params.nqnodes = 7;
