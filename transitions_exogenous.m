@@ -4,6 +4,7 @@ function [VarsExog] = transitions_exogenous(Params,LogicalOpts)
 
 % Time horizon of the model
 horizon = Params.final_year;
+
 % Vector of periods
 t = 0:horizon/Params.timestep;
 
@@ -21,9 +22,9 @@ VarsExog.Ltn(:,1) = Params.L0+(Params.Linf-Params.L0)*(VarsExog.gL(2:end));
 
 % Technological growth rate at each time node
 VarsExog.gA(:,1) = Params.gA_N*10*exp(-Params.dA*Params.timestep*(0:(horizon/Params.timestep+1)));
-VarsExog.At(1) = Params.A0_N;
 
 % Current technology
+VarsExog.At(1) = Params.A0_N;
 for s = 1:horizon/Params.timestep
     VarsExog.At(s+1,:) = VarsExog.At(s)./(1-VarsExog.gA(s));
 end
@@ -33,7 +34,7 @@ for s = 1:horizon/Params.timestep+1
     VarsExog.Atn(s,:) = VarsExog.At(s)./(1-VarsExog.gA(s));
 end
 
-% Effective annual discount factor
+% Discount factor
 VarsExog.betaeff(1) = 1/(1+Params.delta);
 
 % Exogenous decarbonization of production
